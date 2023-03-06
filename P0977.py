@@ -1,15 +1,16 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        result = [0] * n
-        left = 0
-        right = n - 1
-        for i in range(n - 1, -1, -1):
-            if abs(nums[left]) < abs(nums[right]):
-                square = nums[right]
-                right -= 1
-            else:
-                square = nums[left]
-                left += 1
-            result[i] = square * square
-        return result
+        length=len(nums)
+        nums_squares=[]
+        for i in range(0,length):
+          nums_squares.append(nums[i]**2)
+        sorted_squares=[]
+        for i in range(0,length):
+          if nums_squares[0]<=nums_squares[-1]:
+            new_number=nums_squares[-1]
+            del nums_squares[-1]
+          else:
+            new_number=nums_squares[0]
+            del nums_squares[0]
+          sorted_squares.insert(0,new_number)
+        return sorted_squares

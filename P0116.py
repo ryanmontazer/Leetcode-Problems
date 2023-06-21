@@ -12,8 +12,6 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        if not root :
-            return root
         level_pointer=root
         while level_pointer:
             level_pointer1, curr=level_pointer, level_pointer.left

@@ -15,7 +15,6 @@ class Solution:
         if not root :
             return root
         level_pointer=root
-        level_pointer.next= None
         while level_pointer:
             level_pointer1, curr=level_pointer, level_pointer.left
             while curr:

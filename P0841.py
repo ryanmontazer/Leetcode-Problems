@@ -2,8 +2,7 @@
 # Space: O(n)
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-        visited,  queue=set (),[[rooms[0],0]]
-        visited.add(0)
+        visited,  queue= {0} ,[[rooms[0],0]]
         while queue:
             element= queue.pop(0)
             keys=element[0]

@@ -1,3 +1,27 @@
+# Solution 1 Stack
+# Time: O(n)
+# Space: O(n)
+class Solution:
+    def decodeString(self, s: str) -> str:
+        stack=[]
+        for i in range(len(s)):
+            if s[i] != "]" :
+                stack.append(s[i])
+            else:
+                open_bracket=[]
+                while stack[-1] != "[":
+                    open_bracket=[stack.pop()]+open_bracket
+                stack.pop()
+                number=[]
+                while stack and stack[-1].isdigit():
+                    number=[stack.pop()]+number
+                number=int(''.join(map(str, number)))
+                number=int(number)
+                open_bracket=open_bracket*number
+                stack.extend(open_bracket)
+        return "".join(stack)
+
+# Solution 2 Recursion
 class Solution:
     def decodeString(self, s: str) -> str:
         integers="0123456789"

@@ -11,6 +11,32 @@ class Node:
 
 class Solution:
     def postorder(self, root: 'Node') -> List[int]:
+        if root is None:
+            return
+        stack1,stack2,result= [root],[],[]
+        while stack1:
+            node = stack1.pop()
+            stack2.append(node)
+            for child in node.children:
+                stack1.append(child)
+        while stack2:
+            node = stack2.pop()
+            result.append(node.val)
+        return result
+        
+# Solution 2: Using Stack
+# Time: O(n)
+# Space: O(h)
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def postorder(self, root: 'Node') -> List[int]:
         result=[]
         if not root :
             return result
@@ -25,7 +51,7 @@ class Solution:
                     stack.append([node.children[index],False])
         return result
 
-# Solution 2: Using Recursion
+# Solution 3: Using Recursion
 # Time: O(n)
 # Space: O(h)
 """

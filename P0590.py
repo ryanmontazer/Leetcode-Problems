@@ -1,4 +1,31 @@
-# Recursive Solution
+# Solution 1: Using Stack
+# Time: O(n)
+# Space: O(h)
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def postorder(self, root: 'Node') -> List[int]:
+        result=[]
+        if not root :
+            return result
+        stack=[[root,False]]
+        while stack:
+            node,visited= stack.pop()
+            if visited:
+                result.append(node.val)
+            else:
+                stack.append([node,True])
+                for index in range(len(node.children)-1,-1,-1):
+                    stack.append([node.children[index],False])
+        return result
+
+# Solution 2: Using Recursion
 # Time: O(n)
 # Space: O(h)
 """

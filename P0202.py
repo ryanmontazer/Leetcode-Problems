@@ -1,4 +1,25 @@
-# Solution 1
+# Solution 1: Using Two Pointers
+# Time: O(log n)
+# Space: O(1)
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        n1,n2=n,n
+        while True:
+            n1=self.evaluate_squares(n1)
+            n2=self.evaluate_squares(self.evaluate_squares(n2))
+            if n1==n2:
+                break
+        if n1==1:
+            return True
+        else:
+            return False
+    def evaluate_squares(self,n)-> int:
+        result=0
+        for char in str(n):
+            result+= int(char)**2
+        return result
+
+# Solution 2: Using Hash Table
 # Time: O(log n)
 # Space: O(log n)
 class Solution:
@@ -16,7 +37,7 @@ class Solution:
             n=(n- n % 10)/10
         return result
 
-# Solution 2
+# Solution 3: Using Hash Table
 # Time: O(log n)
 # Space: O(log n)
 class Solution:

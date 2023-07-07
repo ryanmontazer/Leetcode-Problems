@@ -47,8 +47,8 @@ class Solution:
                 result.append(node.val)
             else:
                 stack.append([node,True])
-                for index in range(len(node.children)-1,-1,-1):
-                    stack.append([node.children[index],False])
+                for child in reversed(node.children):
+                    stack.append([child,False])
         return result
 
 # Solution 3: Using Recursion

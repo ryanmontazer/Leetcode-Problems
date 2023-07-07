@@ -21,7 +21,7 @@ class Solution:
                 stack.append(node.left)
         return result
 
-# Solution 2: Using Stack
+# Solution 2: Using Stack copy from inorder traversal one line change
 # Time: O(n)
 # Space: O(h)
 # Definition for a binary tree node.

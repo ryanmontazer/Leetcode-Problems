@@ -1,3 +1,4 @@
+# Solution 1: Only using dictionary
 # Time O(n)
 # Space O(n)
 class Solution:
@@ -20,3 +21,25 @@ class Solution:
             result.extend(buckets[i])
             if len(result)>=k:
                 return result
+
+# Solution 2: Using heap and dictionary
+# Time: O(n log(k)) 
+# Space: O(n)
+import heapq
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        my_dict={}
+        for num in nums:
+            if num in my_dict:
+                my_dict[num]+=1
+            else:
+                my_dict[num]=1
+        min_heap=[]
+        for num,frequency in my_dict.items():
+            heapq.heappush(min_heap,[frequency,num])
+            if len(min_heap)>k:
+                heapq.heappop(min_heap)
+        result=[]
+        for item in min_heap:
+            result.append(item[1])
+        return result

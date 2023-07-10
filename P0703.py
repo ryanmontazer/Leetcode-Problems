@@ -22,7 +22,7 @@ class KthLargest:
 # param_1 = obj.add(val)
 
 # Solution 2
-# Time: O(n log(k))
+# Time: O((n-k) log(n))
 # Space: O(k)
 import heapq
 class KthLargest:

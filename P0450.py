@@ -9,8 +9,7 @@
 class Solution:
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         curr=root
-        #Parent is the parent of curr and it will be created as TreeNode(0) if curr is root
-        parent=TreeNode(0)
+        #Parent is the parent of curr. If curr is root, parent is not defined and we don't need it
         #Curr at the end of this while wil be the node which node.val=key
         #If such a node doesnt exist or root is None, curr will be None
         while curr:

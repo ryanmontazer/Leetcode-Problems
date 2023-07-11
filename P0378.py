@@ -1,4 +1,4 @@
-# Time: O(min(n,k)^2*log(k))
+# Time: O(k^2*log(k))
 # Space: O(k)
 import heapq
 class Solution:

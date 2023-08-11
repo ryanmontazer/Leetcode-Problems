@@ -1,3 +1,24 @@
+# Solution 1:
+# Time: O(log(n))
+# Space: O(1)
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        length=len(nums)
+        left,right=0,length-1
+        while left<right:
+            mid=(left+right)//2
+            if nums[mid]==target:
+                return mid
+            if (nums[left]<=target<nums[mid]) or (nums[left]>nums[mid] and not (target>nums[mid] and target<=nums[right])):
+                right=mid
+            else:
+                left=mid+1
+        if nums[left]==target:
+            return left
+        return -1
+
+
+# Solutions 2:
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         length=len(nums)

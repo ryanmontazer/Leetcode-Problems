@@ -1,3 +1,5 @@
+# Time: O(log(n))
+# Space: O(1)
 class Solution:
     def findMin(self, nums: List[int]) -> int:
         length=len(nums)

@@ -1,3 +1,31 @@
+#Time: O(n)
+#Space: O(1)
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        n=len(nums)
+        start,end,summation=0,0,nums[0]
+        result=n+1
+        while True:
+            if summation < target and end+1<n:
+                end+=1
+                summation+=nums[end]
+                if summation>=target:
+                    result=min(result,end-start+1)
+            elif summation<target and end+1==n:
+                if result>n:
+                    return 0
+                else:
+                    return result
+            elif summation >= target and end>start:
+                summation-=nums[start]
+                start+=1
+                if summation >=target:
+                    result =min(result,end-start+1)
+            elif summation >= target and start==end:
+                return 1
+        return result 
+
+Solution2: 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         length=len(nums)

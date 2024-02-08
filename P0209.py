@@ -23,8 +23,6 @@ class Solution:
                     result =min(result,end-start+1)
             elif summation >= target and start==end:
                 return 1
-        return result 
-
 Solution2: 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:

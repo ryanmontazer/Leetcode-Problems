@@ -44,3 +44,34 @@ class Solution:
             #Update level_pointer by moving it to the next level
             level_pointer=level_pointer2
         return root
+
+Solution 2:
+#Time: O(n)
+#Space: O(W) maximum width of tree
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        if not root:
+            return root
+        queue=[root,None]
+        while queue:
+            item=queue.pop(0)
+            if item.left:
+                queue.append(item.left)
+            if item.right:
+                queue.append(item.right)
+            item.next=queue[0]
+            if not queue[0]:
+                queue.pop(0)
+                if queue:
+                    queue.append(None)
+        return root

@@ -1,4 +1,4 @@
-Solution 1:
+# Solution 1:
 # Time: O(n)
 # Space: O(1)
 class Solution:
@@ -14,7 +14,7 @@ class Solution:
                 x_max=min(x_max,points[i][1])
         return arrows
 
-Solution 2:
+# Solution 2:
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
         points.sort()
@@ -29,7 +29,7 @@ class Solution:
             x_max,index=min(x_max,points[i][1]),i
         return 1+self.helper(points[index+1:])
 
-Solution 3:
+# Solution 3:
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
         if len(points)==0:

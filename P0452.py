@@ -1,5 +1,5 @@
 # Solution 1:
-# Time: O(n)
+# Time: O(nlog(n))
 # Space: O(1)
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:

@@ -11,7 +11,7 @@ class Solution:
         old_head=dummy_head
         for i in range(left-1):
             old_head=old_head.next
-        reversed_tail=old_head.next #do not touch it
+        reversed_tail=old_head.next
         current=reversed_tail.next
         reversed_head=reversed_tail
         for i in range(right-left):

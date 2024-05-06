@@ -1,3 +1,16 @@
+Solution 1:
+# Time: O(n)
+# Space: O(1)
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n<4:
+            return n
+        a,b,c=1,2,3
+        for i in range(n-3):
+            a,b,c=b,c,b+c
+        return c
+        
+Solution 2:
 # Time: O(n)
 # Space: O(n)
 class Solution:

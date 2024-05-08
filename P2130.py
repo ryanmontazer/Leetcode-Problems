@@ -1,4 +1,3 @@
-Solution 2
 # Time: O(n)
 # Space: O(n)
 # Definition for singly-linked list.

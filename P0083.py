@@ -13,7 +13,7 @@ class Solution:
         while curr:
             if prev.val!=curr.val:
                 prev,curr=curr,curr.next
-            elif prev.val==curr.val:
+            else:
                 prev.next=curr.next
                 curr=curr.next
         return head

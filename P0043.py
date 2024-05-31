@@ -1,3 +1,5 @@
+# Time: O(mn)
+# Space: O(m+n)
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
         def summation(s1: str, s2: str) -> str:

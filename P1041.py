@@ -17,6 +17,4 @@ class Solution:
                     curr[1]-=1
                 elif direction==0:
                     curr[0]+=1
-        if curr==[0,0] or direction!=1:
-            return True
-        return False
+        return curr==[0,0] or direction!=1

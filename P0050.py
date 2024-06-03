@@ -1,20 +1,21 @@
+# Time: O(log(n))
+# Space: O(log(n))
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         if n<0:
-            n,x=-n,1/x
-        result=1
-        memory=[]
-        while n>0:
-            if n%2==0:
-                n=n/2
-                memory.append('square')
-            else:
+            x,n=1/x,-n
+        stack,result=[],1
+        while n:
+            if n%2:
+                stack.append("plus")
                 n-=1
-                memory.append('plus')
-        while len(memory)>0:
-            if memory[-1]=='plus':
+            else:
+                stack.append("power")
+                n=n//2
+        while stack:
+            char=stack.pop()
+            if char=="plus":
                 result*=x
             else:
-                result=result**2
-            del memory[-1]
+                result=result*result
         return result
